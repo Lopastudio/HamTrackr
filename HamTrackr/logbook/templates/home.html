@@ -1,11 +1,38 @@
 {% extends "master.html" %}
+{% load static %}
 
 {% block title %}
-    HomePage
+    Home Page
 {% endblock %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-4">Home Page</h1>
+    <h1 class="text-3xl font-bold mb-4">HamTrackr - Your digital HamShack</h1>
+
+    <!-- Propagation -->
+    <div class="flex items-center justify-between mb-6">
+        <a href="https://www.hamqsl.com/solar.html" title="Click to add Solar-Terrestrial Data to your website;" class="banner">
+            <img src="https://www.hamqsl.com/solarn0nbh.php" alt="Solar Terrestrial Data" class="banner-img">
+        </a>
+        <div class="ml-6">
+            <h2 class="text-xl font-semibold">Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula justo vel augue pharetra, nec tincidunt purus sodales.</p>
+        </div>
+    </div>
+
+
+    <div>
+        <h2 class="text-xl font-semibold">Coronal Mass Ejection Activity</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula justo vel augue pharetra, nec tincidunt purus sodales.</p>
+        <p>Fusce ac consectetur felis. Nulla convallis enim et nisi suscipit, vel feugiat turpis mattis. Nullam dignissim metus eget ex mollis, a molestie lectus lobortis.</p>
+    </div>
+
+    <div class="flex overflow-x-auto">
+        <img src="https://sohowww.nascom.nasa.gov/data/LATEST/current_c2.gif" height="100" class="mr-4">
+        <img src="https://sohowww.nascom.nasa.gov/data/LATEST/current_c3.gif" height="100" class="mr-4">
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,42 @@
+.banner {
+    max-width: 300px; /* Adjust the width as needed */
+    display: block;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.ml-6 {
+    margin-left: 1.5rem;
+}
+
+.mr-4 {
+    margin-right: 1rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}

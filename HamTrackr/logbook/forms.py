@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import Contact
 
 class ContactForm(forms.ModelForm):
-    frequency = forms.DecimalField(label='Frequency (kHz)')  # Modify the label
+    frequency = forms.DecimalField(label='Frequency (kHz)')
 
     class Meta:
         model = Contact

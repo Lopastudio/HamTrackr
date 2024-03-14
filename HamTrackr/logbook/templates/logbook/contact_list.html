@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact List</title>
+</head>
+<body>
+    <h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+            <li>{{ contact.callsign }} - {{ contact.frequency }} MHz - {{ contact.mode }} - {{ contact.date_time }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'log_contact' %}">Log New Contact</a>
+</body>
+</html>

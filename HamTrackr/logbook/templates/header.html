@@ -1,0 +1,49 @@
+<header class="bg-gray-800 p-4">
+    <nav class="flex items-center justify-between">
+        <ul class="flex items-center space-x-4">
+            <li>
+                <h4><a href="{% url 'home_page' %}" class="text-white hover:text-gray-300">Home</a></h4>
+            </li>
+            <li class="relative">
+                <h4><a href="#" class="text-white hover:text-gray-300">Logging</a></h4>
+                <ul class="absolute bg-gray-800 mt-2 py-2 w-40 rounded-lg shadow-lg hidden">
+                    <li><a href="{% url 'log_contact' %}" class="block px-4 py-2 text-white hover:text-gray-300">General logging</a></li>
+                </ul>
+            </li>
+            <li>
+                <h4><a href="{% url 'contact_list' %}" class="text-white hover:text-gray-300">Show QSOs</a></h4>
+            </li>
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" class="ml-4">
+                {% csrf_token %}
+                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Logout</button>
+            </form>
+            {% else %}
+            <li class="ml-4">
+                <a href="{% url 'login' %}" class="text-white hover:text-gray-300">Log In</a> / <a href="{% url 'signup' %}" class="text-white hover:text-gray-300">Register</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownToggle = document.querySelector('.relative');
+
+        dropdownToggle.addEventListener('mouseenter', function() {
+            this.querySelector('ul').classList.remove('hidden');
+        });
+
+        dropdownToggle.addEventListener('mouseleave', function() {
+            this.querySelector('ul').classList.add('hidden');
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!dropdownToggle.contains(event.target)) {
+                dropdownToggle.querySelector('ul').classList.add('hidden');
+            }
+        });
+    });
+</script>

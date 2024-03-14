@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact List</title>
-</head>
-<body>
-    <h1>Contact List</h1>
-    <ul>
-        {% for contact in contacts %}
-            <li>{{ contact.callsign }} - {{ contact.frequency }} MHz - {{ contact.mode }} - {{ contact.date_time }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'log_contact' %}">Log New Contact</a>
+{% extends "master.html" %}
+
+{% block title %}
+    Contact List
+{% endblock %}
+
+{% block content %}
+<body class="bg-gray-100 p-4">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-4">Your QSOs</h1>
+        <ul class="list-disc pl-4">
+            {% for contact in contacts %}
+                <li class="mb-2">
+                    {{ contact.callsign }} - {{ contact.frequency }} kHz - {{ contact.mode }} - {{ contact.date_time }}
+                    <a href="{% url 'edit_contact' contact.id %}" class="text-blue-500 hover:underline">Edit</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'log_contact' %}" class="block mt-4 text-blue-500 hover:underline">Log New Contact</a>
+    </div>
 </body>
-</html>
+{% endblock %}

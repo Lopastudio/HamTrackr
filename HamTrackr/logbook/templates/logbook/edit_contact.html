@@ -1,17 +1,17 @@
 {% extends "master.html" %}
 
 {% block title %}
-    Logging
+    Editing Contact
 {% endblock %}
 
 {% block content %}
 <body class="bg-gray-100 p-4">
     <div class="container mx-auto">
-        <h1 class="text-3xl font-bold mb-4">Log Contact</h1>
+        <h1 class="text-3xl font-bold mb-4">Edit Contact</h1>
         <form method="post" class="max-w-sm">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Log Contact</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Update Contact</button>
         </form>
     </div>
 </body>
